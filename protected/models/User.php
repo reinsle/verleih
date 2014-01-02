@@ -13,6 +13,8 @@
  */
 class User extends CActiveRecord
 {
+    public $password_repeat;
+
     /**
      * @return string the associated database table name
      */
@@ -29,9 +31,12 @@ class User extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('email, password, create_time, update_time', 'required'),
+            array('email, password, , password_repeat', 'required'),
             array('create_time, update_time, last_login_time', 'numerical', 'integerOnly' => true),
             array('email, password', 'length', 'max' => 128),
+            array('email', 'email'),
+            array('email', 'unique'),
+            array('password', 'compare'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('id, email, password, create_time, update_time, last_login_time', 'safe', 'on' => 'search'),
@@ -91,6 +96,56 @@ class User extends CActiveRecord
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));
+    }
+
+    /**
+     * Attach behavors to the class
+     *
+     * @return array whith behavors
+     */
+    public function behaviors()
+    {
+        return array(
+            'CTimestampBehavior' => array(
+                'class' => 'zii.behaviors.CTimestampBehavior',
+                'createAttribute' => 'create_time',
+                'updateAttribute' => 'update_time',
+                'setUpdateOnCreate' => true,
+            ),
+        );
+    }
+
+    /**
+     * apply a hash to the password before store in database
+     */
+    protected function afterValidate()
+    {
+        parent::afterValidate();
+        if (!$this->hasErrors()) {
+            $this->password = $this->hashPassword($this->password);
+        }
+    }
+
+    /**
+     * Checks if the given password matches the tored one
+     *
+     * @param $password the password to check
+     * @return bool if password are equal
+     */
+    public function validatePassword($password)
+    {
+        return $this->hashPassword($password) === $this->password;
+    }
+
+    /**
+     * Generates the password hash to store in database
+     *
+     * @param $password the unencrypted password
+     * @return string the encrypted password
+     */
+    public function hashPassword($password)
+    {
+        return sha1($password);
     }
 
     /**

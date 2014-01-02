@@ -12,7 +12,7 @@
         // controller action is handling ajax validation correctly.
         // There is a call to performAjaxValidation() commented in generated controller code.
         // See class documentation of CActiveForm for details on this.
-        'enableAjaxValidation' => false,
+        'enableAjaxValidation' => true,
     )); ?>
 
     <p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -32,21 +32,9 @@
     </div>
 
     <div class="row">
-        <?php echo $form->labelEx($model, 'create_time'); ?>
-        <?php echo $form->textField($model, 'create_time'); ?>
-        <?php echo $form->error($model, 'create_time'); ?>
-    </div>
-
-    <div class="row">
-        <?php echo $form->labelEx($model, 'update_time'); ?>
-        <?php echo $form->textField($model, 'update_time'); ?>
-        <?php echo $form->error($model, 'update_time'); ?>
-    </div>
-
-    <div class="row">
-        <?php echo $form->labelEx($model, 'last_login_time'); ?>
-        <?php echo $form->textField($model, 'last_login_time'); ?>
-        <?php echo $form->error($model, 'last_login_time'); ?>
+        <?php echo $form->labelEx($model, 'password_repeat'); ?>
+        <?php echo $form->passwordField($model, 'password_repeat', array('size' => 60, 'maxlength' => 128)); ?>
+        <?php echo $form->error($model, 'password_repeat'); ?>
     </div>
 
     <div class="row buttons">

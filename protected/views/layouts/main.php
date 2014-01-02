@@ -38,6 +38,7 @@
                 array('label' => 'ArtikelTyp', 'url' => array('/artikelTyp'), 'visible' => !Yii::app()->user->isGuest),
                 array('label' => 'Artikel', 'url' => array('/artikel'), 'visible' => !Yii::app()->user->isGuest),
                 array('label' => 'Verleih', 'url' => array('/verleih'), 'visible' => !Yii::app()->user->isGuest),
+                array('label' => 'User', 'url' => array('/user'), 'visible' => !Yii::app()->user->isGuest),
                 array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
                 array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
             ),
