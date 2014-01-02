@@ -20,11 +20,11 @@ return array(
 
     'modules' => array(
         // uncomment the following to enable the Gii tool
-        'gii'=>array(
-            'class'=>'system.gii.GiiModule',
-            'password'=>'ni.xd.ol',
+        'gii' => array(
+            'class' => 'system.gii.GiiModule',
+            'password' => 'ni.xd.ol',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
-            'ipFilters'=>array('127.0.0.1','::1'),
+            'ipFilters' => array('127.0.0.1', '::1'),
         ),
     ),
 
@@ -37,7 +37,7 @@ return array(
         // uncomment the following to enable URLs in path-format
         'urlManager' => array(
             'urlFormat' => 'path',
-            'showScriptName'=>false,
+            'showScriptName' => false,
             'rules' => array(
                 // REST patterns
                 array('api/list', 'pattern' => 'api/<model:\w+>', 'verb' => 'GET'),
@@ -55,7 +55,7 @@ return array(
         ),
         */
         // uncomment the following to use a MySQL database
-        'db'=>array(
+        'db' => array(
             'connectionString' => 'pgsql:host=10.4.3.30;dbname=verleih',
             'emulatePrepare' => true,
             'username' => 'verleih',
@@ -79,6 +79,18 @@ return array(
                     'class'=>'CWebLogRoute',
                 ),
                 */
+            ),
+        ),
+        'clientScript' => array(
+            'packages' => array(
+                'jquery' => array(
+                    'baseUrl' => '//ajax.googleapis.com/ajax/libs/jquery/2.0.3',
+                    'js' => array('jquery.min.js'),
+                ),
+                'jquery.ui' => array(
+                    'baseUrl' => '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3',
+                    'js' => array('jquery-ui.min.js'),
+                ),
             ),
         ),
     ),
