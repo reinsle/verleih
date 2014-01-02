@@ -34,6 +34,7 @@ class Artikel extends CActiveRecord
 			array('artikel_typ_id, name', 'required'),
 			array('name', 'length', 'max'=>128),
 			array('bemerkung', 'safe'),
+            array('bemerkung', 'default', 'setOnEmpty' => true, 'value' => null),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, artikel_typ_id, name, bemerkung', 'safe', 'on'=>'search'),
