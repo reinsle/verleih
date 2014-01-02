@@ -33,6 +33,7 @@ class Verleih extends CActiveRecord
 		return array(
 			array('artikel_id, verleih', 'required'),
 			array('rueckgabe, bemerkung', 'safe'),
+            array('rueckgabe, bemerkung', 'default', 'setOnEmpty' => true, 'value' => null),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, artikel_id, verleih, rueckgabe, bemerkung', 'safe', 'on'=>'search'),

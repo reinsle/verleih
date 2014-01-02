@@ -63,9 +63,10 @@ class VerleihController extends Controller
 	public function actionCreate()
 	{
 		$model=new Verleih;
+        $model->verleih = date('Y-m-d');
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Verleih']))
 		{
@@ -89,7 +90,7 @@ class VerleihController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Verleih']))
 		{
