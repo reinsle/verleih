@@ -27,3 +27,14 @@ $this->menu = array(
         'bemerkung',
     ),
 )); ?>
+
+<br />
+<h2>Verleihliste:</h2>
+<table class="detail-view" id="yw1">
+    <tr class="odd"><td><b>id</b></td><td><b>Verleih</b></td><td><b>Rückgabe</b></td><td><b>Bemerkung</b></td></tr>
+<?php
+foreach($model->verleih as $ver) {
+    echo '<tr class="even"><td>'.$ver->id.'</td><td>'.$ver->verleih.'</td><td>'.$ver->rueckgabe.'</td><td>'.$ver->bemerkung.'</td></tr>';
+}
+?>
+</table>
