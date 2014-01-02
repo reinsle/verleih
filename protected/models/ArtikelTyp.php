@@ -54,7 +54,7 @@ class ArtikelTyp extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' => 'id',
 			'name' => 'Name',
 		);
 	}

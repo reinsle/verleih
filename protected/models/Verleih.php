@@ -59,8 +59,8 @@ class Verleih extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'artikel_id' => 'Artikel',
-			'verleih' => 'Verleih',
-			'rueckgabe' => 'Rueckgabe',
+			'verleih' => 'Verleih-Datum',
+			'rueckgabe' => 'Rueckgabe-Datum',
 			'bemerkung' => 'Bemerkung',
 		);
 	}
