@@ -142,7 +142,7 @@ class ArtikelController extends Controller
      */
     public function loadModel($id)
     {
-        $model = Artikel::model()->findByPk($id);
+        $model = Artikel::model()->with('verleih')->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
