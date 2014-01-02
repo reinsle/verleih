@@ -10,7 +10,7 @@
     <br/>
 
     <b><?php echo CHtml::encode($data->getAttributeLabel('artikel_id')); ?>:</b>
-    <?php echo CHtml::encode($data->artikel_id); ?>
+    <?php echo CHtml::encode($data->artikel->id . ': ' . $data->artikel->name); ?>
     <br/>
 
     <b><?php echo CHtml::encode($data->getAttributeLabel('verleih')); ?>:</b>
