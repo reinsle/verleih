@@ -10,7 +10,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('artikel_typ_id')); ?>:</b>
-	<?php echo CHtml::encode($data->artikel_typ_id); ?>
+	<?php echo CHtml::encode($data->artikelTyp->name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
