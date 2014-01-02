@@ -19,11 +19,14 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'artikel_typ_id'); ?>
-		<?php echo $form->textField($model,'artikel_typ_id'); ?>
-		<?php echo $form->error($model,'artikel_typ_id'); ?>
-	</div>
+    <div class="row">
+        <?php echo $form->labelEx($model,'artikel_typ_id'); ?>
+        <?php echo $form->dropDownList($model, 'artikel_typ_id', CHtml::listData(
+                ArtikelTyp::model()->findAll(), 'id', 'name'),
+            array('prompt' => 'Select a ArtikelTyp')
+        ); ?>
+        <?php echo $form->error($model,'artikel_typ_id'); ?>
+    </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>

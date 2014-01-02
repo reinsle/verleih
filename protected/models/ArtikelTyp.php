@@ -44,7 +44,7 @@ class ArtikelTyp extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'artikels' => array(self::HAS_MANY, 'Artikel', 'artikel_typ_id'),
+			'artikel' => array(self::HAS_MANY, 'Artikel', 'artikel_typ_id'),
 		);
 	}
 
