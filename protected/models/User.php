@@ -39,7 +39,7 @@ class User extends CActiveRecord
             array('password', 'compare'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, email, password, create_time, update_time, last_login_time', 'safe', 'on' => 'search'),
+            array('id, email, last_login_time', 'safe', 'on' => 'search'),
         );
     }
 
