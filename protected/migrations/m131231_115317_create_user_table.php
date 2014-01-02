@@ -26,5 +26,5 @@ class m131231_115317_create_user_table extends CDbMigration
     {
         $this->dropIndex('user_email_unique', 'user');
         $this->dropTable('user');
-	}
+    }
 }

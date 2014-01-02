@@ -17,7 +17,7 @@ return array(
         ),
         */
         // uncomment the following to use a MySQL database
-        'db'=>array(
+        'db' => array(
             'connectionString' => 'pgsql:host=10.4.3.30;dbname=verleih',
             'emulatePrepare' => true,
             'username' => 'verleih',
