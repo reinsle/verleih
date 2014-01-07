@@ -12,10 +12,16 @@ return array(
     // preloading 'log' component
     'preload' => array('log'),
 
+    // path aliases
+    'aliases' => array(
+        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change this if necessary
+    ),
+
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'bootstrap.helpers.TbHtml',
     ),
 
     'modules' => array(
@@ -25,6 +31,7 @@ return array(
             'password' => 'ni.xd.ol',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('127.0.0.1', '::1'),
+            'generatorPaths' => array('bootstrap.gii'),
         ),
     ),
 
@@ -92,6 +99,9 @@ return array(
                     'js' => array('jquery-ui.min.js'),
                 ),
             ),
+        ),
+        'bootstrap' => array(
+            'class' => 'bootstrap.components.TbApi',
         ),
     ),
 
