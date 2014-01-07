@@ -48,6 +48,7 @@
         ));
         ?>
         <br />
+        <br />
     </div>
     <!-- mainmenu -->
     <?php if (isset($this->breadcrumbs)): ?>
