@@ -12,10 +12,16 @@ return array(
     // preloading 'log' component
     'preload' => array('log'),
 
+    // path aliases
+    'aliases' => array(
+        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change this if necessary
+    ),
+
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'bootstrap.helpers.TbHtml',
     ),
 
     'modules' => array(
@@ -25,6 +31,7 @@ return array(
             'password' => 'ni.xd.ol',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('127.0.0.1', '::1'),
+            'generatorPaths' => array('bootstrap.gii'),
         ),
     ),
 
@@ -49,12 +56,11 @@ return array(
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ),
         ),
-        /*
         'db' => array(
-            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/testdrive.db',
+            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/verleih.db',
         ),
-        */
         // uncomment the following to use a MySQL database
+        /*
         'db' => array(
             'connectionString' => 'pgsql:host=10.4.3.30;dbname=verleih',
             'emulatePrepare' => true,
@@ -62,6 +68,7 @@ return array(
             'password' => 'ni.xd.ol',
             'charset' => 'utf8',
         ),
+        */
         'errorHandler' => array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',
@@ -92,6 +99,9 @@ return array(
                     'js' => array('jquery-ui.min.js'),
                 ),
             ),
+        ),
+        'bootstrap' => array(
+            'class' => 'bootstrap.components.TbApi',
         ),
     ),
 

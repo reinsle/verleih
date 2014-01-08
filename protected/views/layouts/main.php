@@ -1,4 +1,5 @@
 <?php /* @var $this Controller */ ?>
+<?php Yii::app()->bootstrap->register(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -25,24 +26,29 @@
 <body>
 
 <div class="container" id="page">
-
-    <div id="header">
-        <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-    </div>
-    <!-- header -->
-
-    <div id="mainmenu">
-        <?php $this->widget('zii.widgets.CMenu', array(
+    <div>
+        <?php $this->widget('bootstrap.widgets.TbNavbar', array(
+            'brandLabel' => 'Verleihliste',
             'items' => array(
-                array('label' => 'Home', 'url' => array('/site/index')),
-                array('label' => 'ArtikelTyp', 'url' => array('/artikelTyp'), 'visible' => !Yii::app()->user->isGuest),
-                array('label' => 'Artikel', 'url' => array('/artikel'), 'visible' => !Yii::app()->user->isGuest),
-                array('label' => 'Verleih', 'url' => array('/verleih'), 'visible' => !Yii::app()->user->isGuest),
-                array('label' => 'User', 'url' => array('/user'), 'visible' => !Yii::app()->user->isGuest),
-                array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
-                array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+                array(
+                    'class' => 'bootstrap.widgets.TbNav',
+                    'items' => array(
+                        array('label' => Yii::t('app', 'Home'), 'url' => array('/site/index')),
+                        array('label' => Yii::t('app', 'Verleih'), 'url' => array('/verleih/index'), 'visible' => !Yii::app()->user->isGuest),
+                        array('label' => Yii::t('app', 'Artikel'), 'url' => array('/artikel/index'), 'visible' => !Yii::app()->user->isGuest),
+                        array('label' => Yii::t('app', 'Data'), 'items' => array(
+                            array('label' => Yii::t('app', 'Artikel Typ'), 'url' => array('/artikelTyp/index'), 'visible' => !Yii::app()->user->isGuest),
+                        ), 'visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+                        array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+                    ),
+                ),
             ),
-        )); ?>
+
+        ));
+        ?>
+        <br />
+        <br />
     </div>
     <!-- mainmenu -->
     <?php if (isset($this->breadcrumbs)): ?>
