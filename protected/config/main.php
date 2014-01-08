@@ -56,12 +56,11 @@ return array(
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ),
         ),
-        /*
         'db' => array(
-            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/testdrive.db',
+            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/verleih.db',
         ),
-        */
         // uncomment the following to use a MySQL database
+        /*
         'db' => array(
             'connectionString' => 'pgsql:host=10.4.3.30;dbname=verleih',
             'emulatePrepare' => true,
@@ -69,6 +68,7 @@ return array(
             'password' => 'ni.xd.ol',
             'charset' => 'utf8',
         ),
+        */
         'errorHandler' => array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',

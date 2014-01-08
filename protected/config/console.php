@@ -11,12 +11,11 @@ return array(
 
     // application components
     'components' => array(
-        /*
         'db' => array(
-            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/testdrive.db',
+            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/verleih.db',
         ),
-        */
         // uncomment the following to use a MySQL database
+        /*
         'db' => array(
             'connectionString' => 'pgsql:host=10.4.3.30;dbname=verleih',
             'emulatePrepare' => true,
@@ -24,6 +23,7 @@ return array(
             'password' => 'ni.xd.ol',
             'charset' => 'utf8',
         ),
+        */
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
