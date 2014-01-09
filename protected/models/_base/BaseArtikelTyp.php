@@ -7,11 +7,12 @@
  * property or method in class "ArtikelTyp".
  *
  * Columns in table "artikel_typ" available as properties of the model,
- * and there are no model relations.
+ * followed by relations of table "artikel_typ" available as properties of the model.
  *
  * @property integer $id
  * @property string $name
  *
+ * @property Artikel[] $artikels
  */
 abstract class BaseArtikelTyp extends GxActiveRecord {
 
@@ -41,6 +42,7 @@ abstract class BaseArtikelTyp extends GxActiveRecord {
 
 	public function relations() {
 		return array(
+			'artikels' => array(self::HAS_MANY, 'Artikel', 'artikel_typ_id'),
 		);
 	}
 
@@ -53,6 +55,7 @@ abstract class BaseArtikelTyp extends GxActiveRecord {
 		return array(
 			'id' => Yii::t('app', 'ID'),
 			'name' => Yii::t('app', 'Name'),
+			'artikels' => null,
 		);
 	}
 

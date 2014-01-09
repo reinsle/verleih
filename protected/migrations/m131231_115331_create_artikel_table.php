@@ -6,7 +6,7 @@ class m131231_115331_create_artikel_table extends CDbMigration
     {
         $this->createTable('artikel', array(
             'id' => 'pk',
-            'artikel_typ_id' => 'bigint NOT NULL REFERENCES tbl_artikel_typ(id)',
+            'artikel_typ_id' => 'bigint NOT NULL REFERENCES artikel_typ(id)',
             'name' => 'varchar(128) NOT NULL',
             'bemerkung' => 'text',
         ));

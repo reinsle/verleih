@@ -6,7 +6,7 @@ class m131231_115337_create_verleih_table extends CDbMigration
     {
         $this->createTable('verleih', array(
             'id' => 'pk',
-            'artikel_id' => 'bigint NOT NULL REFERENCES tbl_artikel(id)',
+            'artikel_id' => 'bigint NOT NULL REFERENCES artikel(id)',
             'verleih' => 'date NOT NULL',
             'rueckgabe' => 'date',
             'bemerkung' => 'text',

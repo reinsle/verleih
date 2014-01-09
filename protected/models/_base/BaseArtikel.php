@@ -15,6 +15,7 @@
  * @property string $bemerkung
  *
  * @property ArtikelTyp $artikelTyp
+ * @property Verleih[] $verleihs
  */
 abstract class BaseArtikel extends GxActiveRecord {
 
@@ -48,6 +49,7 @@ abstract class BaseArtikel extends GxActiveRecord {
 	public function relations() {
 		return array(
 			'artikelTyp' => array(self::BELONGS_TO, 'ArtikelTyp', 'artikel_typ_id'),
+			'verleihs' => array(self::HAS_MANY, 'Verleih', 'artikel_id'),
 		);
 	}
 
@@ -63,6 +65,7 @@ abstract class BaseArtikel extends GxActiveRecord {
 			'name' => Yii::t('app', 'Name'),
 			'bemerkung' => Yii::t('app', 'Bemerkung'),
 			'artikelTyp' => null,
+			'verleihs' => null,
 		);
 	}
 
