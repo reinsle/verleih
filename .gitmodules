@@ -4,3 +4,6 @@
 [submodule "protected/extensions/giix"]
 	path = protected/extensions/giix
 	url = git@github.com:rcoelho/giix.git
+[submodule "protected/extensions/auth"]
+	path = protected/extensions/auth
+	url = git@github.com:Crisu83/yii-auth.git
