@@ -22,6 +22,7 @@ return array(
         'application.models.*',
         'application.components.*',
         'bootstrap.helpers.TbHtml',
+        'ext.giix.components.*',
     ),
 
     'modules' => array(
@@ -31,7 +32,7 @@ return array(
             'password' => 'ni.xd.ol',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('127.0.0.1', '::1'),
-            'generatorPaths' => array('bootstrap.gii'),
+            'generatorPaths' => array('bootstrap.gii', 'ext.giix.generators',),
         ),
     ),
 
@@ -103,6 +104,14 @@ return array(
         'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',
         ),
+        /*
+        'messages' => array(
+            // Pending on core: http://code.google.com/p/yii/issues/detail?id=2624
+            'extensionBasePaths' => array(
+                'giix' => 'ext.giix.messages', // giix messages directory.
+            ),
+        ),
+        */
     ),
 
     // application-level parameters that can be accessed

@@ -1,3 +1,6 @@
 [submodule "protected/extensions/bootstrap"]
 	path = protected/extensions/bootstrap
 	url = git@github.com:Crisu83/yiistrap.git
+[submodule "protected/extensions/giix"]
+	path = protected/extensions/giix
+	url = git@github.com:rcoelho/giix.git
