@@ -1,17 +1,11 @@
-<?php
-/* @var $this ArtikelTypController */
-/* @var $data ArtikelTyp */
-?>
-
 <div class="view">
 
-    <b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-    <?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
-    <br/>
+	<?php echo GxHtml::encode($data->getAttributeLabel('id')); ?>:
+	<?php echo GxHtml::link(GxHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
+	<br />
 
-    <b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-    <?php echo CHtml::encode($data->name); ?>
-    <br/>
-
+	<?php echo GxHtml::encode($data->getAttributeLabel('name')); ?>:
+	<?php echo GxHtml::encode($data->name); ?>
+	<br />
 
 </div>

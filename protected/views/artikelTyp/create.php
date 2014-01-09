@@ -1,18 +1,20 @@
 <?php
-/* @var $this ArtikelTypController */
-/* @var $model ArtikelTyp */
 
 $this->breadcrumbs = array(
-    'Artikel Typs' => array('index'),
-    'Create',
+	$model->label(2) => array('index'),
+	'Create',
 );
 
 $this->menu = array(
-    array('label' => 'List ArtikelTyp', 'url' => array('index')),
-    array('label' => 'Manage ArtikelTyp', 'url' => array('admin')),
+	array('label'=>'List' . ' ' . $model->label(2), 'url' => array('index')),
+	array('label'=>'Manage' . ' ' . $model->label(2), 'url' => array('admin')),
 );
 ?>
 
-    <h1>Create ArtikelTyp</h1>
+<h1><?php echo 'Create' . ' ' . GxHtml::encode($model->label()); ?></h1>
 
-<?php $this->renderPartial('_form', array('model' => $model)); ?>
+<?php
+$this->renderPartial('_form', array(
+		'model' => $model,
+		'buttons' => 'create'));
+?>

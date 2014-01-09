@@ -1,30 +1,33 @@
 <?php
-/* @var $this VerleihController */
-/* @var $model Verleih */
 
 $this->breadcrumbs = array(
-    'Verleihs' => array('index'),
-    $model->id,
+	$model->label(2) => array('index'),
+	GxHtml::valueEx($model),
 );
 
-$this->menu = array(
-    array('label' => 'List Verleih', 'url' => array('index')),
-    array('label' => 'Create Verleih', 'url' => array('create')),
-    array('label' => 'Update Verleih', 'url' => array('update', 'id' => $model->id)),
-    array('label' => 'Delete Verleih', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => 'Are you sure you want to delete this item?')),
-    array('label' => 'Manage Verleih', 'url' => array('admin')),
+$this->menu=array(
+	array('label'=>'List' . ' ' . $model->label(2), 'url'=>array('index')),
+	array('label'=>'Create' . ' ' . $model->label(), 'url'=>array('create')),
+	array('label'=>'Update' . ' ' . $model->label(), 'url'=>array('update', 'id' => $model->id)),
+	array('label'=>'Delete' . ' ' . $model->label(), 'url'=>'#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage' . ' ' . $model->label(2), 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Verleih #<?php echo $model->id; ?></h1>
+<h1><?php echo 'View' . ' ' . GxHtml::encode($model->label()) . ' ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
-    'data' => $model,
-    'attributes' => array(
-        'id',
-        'artikel_id',
-        'verleih',
-        'rueckgabe',
-        'bemerkung',
-    ),
+	'data' => $model,
+	'attributes' => array(
+'id',
+array(
+			'name' => 'artikel',
+			'type' => 'raw',
+			'value' => $model->artikel !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->artikel)), array('tblArtikel/view', 'id' => GxActiveRecord::extractPkValue($model->artikel, true))) : null,
+			),
+'verleih',
+'rueckgabe',
+'bemerkung',
+	),
 )); ?>
+

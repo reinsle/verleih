@@ -1,20 +1,19 @@
 <?php
-/* @var $this ArtikelTypController */
-/* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs = array(
-    'Artikel Typs',
+	ArtikelTyp::label(2),
+	'Index',
 );
 
 $this->menu = array(
-    array('label' => 'Create ArtikelTyp', 'url' => array('create')),
-    array('label' => 'Manage ArtikelTyp', 'url' => array('admin')),
+	array('label'=>'Create' . ' ' . ArtikelTyp::label(), 'url' => array('create')),
+	array('label'=>'Manage' . ' ' . ArtikelTyp::label(2), 'url' => array('admin')),
 );
 ?>
 
-<h1>Artikel Typs</h1>
+<h1><?php echo GxHtml::encode(ArtikelTyp::label(2)); ?></h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
-    'dataProvider' => $dataProvider,
-    'itemView' => '_view',
-)); ?>
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+)); 

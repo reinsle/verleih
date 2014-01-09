@@ -1,18 +1,20 @@
 <?php
-/* @var $this VerleihController */
-/* @var $model Verleih */
 
 $this->breadcrumbs = array(
-    'Verleihs' => array('index'),
-    'Create',
+	$model->label(2) => array('index'),
+	'Create',
 );
 
 $this->menu = array(
-    array('label' => 'List Verleih', 'url' => array('index')),
-    array('label' => 'Manage Verleih', 'url' => array('admin')),
+	array('label'=>'List' . ' ' . $model->label(2), 'url' => array('index')),
+	array('label'=>'Manage' . ' ' . $model->label(2), 'url' => array('admin')),
 );
 ?>
 
-    <h1>Create Verleih</h1>
+<h1><?php echo 'Create' . ' ' . GxHtml::encode($model->label()); ?></h1>
 
-<?php $this->renderPartial('_form', array('model' => $model)); ?>
+<?php
+$this->renderPartial('_form', array(
+		'model' => $model,
+		'buttons' => 'create'));
+?>

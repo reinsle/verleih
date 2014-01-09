@@ -1,21 +1,22 @@
 <?php
-/* @var $this ArtikelTypController */
-/* @var $model ArtikelTyp */
 
 $this->breadcrumbs = array(
-    'Artikel Typs' => array('index'),
-    $model->name => array('view', 'id' => $model->id),
-    'Update',
+	$model->label(2) => array('index'),
+	GxHtml::valueEx($model) => array('view', 'id' => GxActiveRecord::extractPkValue($model, true)),
+	'Update',
 );
 
 $this->menu = array(
-    array('label' => 'List ArtikelTyp', 'url' => array('index')),
-    array('label' => 'Create ArtikelTyp', 'url' => array('create')),
-    array('label' => 'View ArtikelTyp', 'url' => array('view', 'id' => $model->id)),
-    array('label' => 'Manage ArtikelTyp', 'url' => array('admin')),
+	array('label' => 'List' . ' ' . $model->label(2), 'url'=>array('index')),
+	array('label' => 'Create' . ' ' . $model->label(), 'url'=>array('create')),
+	array('label' => 'View' . ' ' . $model->label(), 'url'=>array('view', 'id' => GxActiveRecord::extractPkValue($model, true))),
+	array('label' => 'Manage' . ' ' . $model->label(2), 'url'=>array('admin')),
 );
 ?>
 
-    <h1>Update ArtikelTyp <?php echo $model->id; ?></h1>
+<h1><?php echo 'Update' . ' ' . GxHtml::encode($model->label()) . ' ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
 
-<?php $this->renderPartial('_form', array('model' => $model)); ?>
+<?php
+$this->renderPartial('_form', array(
+		'model' => $model));
+?>

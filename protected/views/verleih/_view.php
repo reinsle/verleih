@@ -1,29 +1,20 @@
-<?php
-/* @var $this VerleihController */
-/* @var $data Verleih */
-?>
-
 <div class="view">
 
-    <b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-    <?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
-    <br/>
+	<?php echo GxHtml::encode($data->getAttributeLabel('id')); ?>:
+	<?php echo GxHtml::link(GxHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
+	<br />
 
-    <b><?php echo CHtml::encode($data->getAttributeLabel('artikel_id')); ?>:</b>
-    <?php echo CHtml::encode($data->artikel->id . ': ' . $data->artikel->name); ?>
-    <br/>
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('verleih')); ?>:</b>
-    <?php echo CHtml::encode($data->verleih); ?>
-    <br/>
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('rueckgabe')); ?>:</b>
-    <?php echo CHtml::encode($data->rueckgabe); ?>
-    <br/>
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('bemerkung')); ?>:</b>
-    <?php echo CHtml::encode($data->bemerkung); ?>
-    <br/>
-
+	<?php echo GxHtml::encode($data->getAttributeLabel('artikel')); ?>:
+	<?php echo GxHtml::encode(GxHtml::valueEx($data->artikel)); ?>
+	<br />
+	<?php echo GxHtml::encode($data->getAttributeLabel('verleih')); ?>:
+	<?php echo GxHtml::encode($data->verleih); ?>
+	<br />
+	<?php echo GxHtml::encode($data->getAttributeLabel('rueckgabe')); ?>:
+	<?php echo GxHtml::encode($data->rueckgabe); ?>
+	<br />
+	<?php echo GxHtml::encode($data->getAttributeLabel('bemerkung')); ?>:
+	<?php echo GxHtml::encode($data->bemerkung); ?>
+	<br />
 
 </div>
